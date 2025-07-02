@@ -1,20 +1,15 @@
-type Params = {
-  params: {
-    slug: string;
-  };
-};
+import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: Params) {
-  return { title: `Post: ${params.slug}` };
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: `Post: ` };
 }
 
-export default function Page({ params }: Params) {
+export default function Page() {
   return (
     <>
-      <h1>Slug: {params.slug} <p>HoleText</p></h1>
+      <h1>Slug:  <p>HoleText</p></h1>
       <p>This is a dynamic route segment.</p>
       <p>Dynamic segments are useful for creating pages that depend on the URL, such as blog posts.</p>
     </>
   );
 }
-
